@@ -66,6 +66,8 @@ describe( 'changing image size', () => {
 		);
 		imageSizeSelect.select( 'custom-size-one' );
 
+		page.waitForSelector( '.wp-block-image.custom-size-one' );
+
 		const imageWidth = await page.$eval(
 			'.block-editor-image-size-control__width input',
 			( el ) => parseInt( el.value, 10 )
